@@ -157,7 +157,7 @@ namespace UptimeKuma {
                     using TcpClient tcpClient = new TcpClient();
                     while (true) {
                         try {
-                            tcpClient.Connect("127.0.0.1", 8085);
+                            tcpClient.Connect("127.0.0.1", 3001);
                             statusMenuItem.Text = runningText;
                             openMenuItem.Enabled = true;
                             trayIcon.Text = runningText;
@@ -178,7 +178,7 @@ namespace UptimeKuma {
         }
 
         void Open(object sender, EventArgs e) {
-            Process.Start("http://localhost:8085");
+            Process.Start("http://localhost:3001");
         }
 
         void DebugConsole(object sender, EventArgs e) {
