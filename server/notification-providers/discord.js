@@ -50,20 +50,20 @@ class Discord extends NotificationProvider {
                 let discorddowndata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "❌ Your service " + monitorJSON["name"] + " went down. ❌",
+                        title: "❌ El servicio " + monitorJSON["name"] + " se a caido. ❌",
                         color: 16711680,
                         timestamp: heartbeatJSON["time"],
                         fields: [
                             {
-                                name: "Service Name",
+                                name: "Nombre del Servicio",
                                 value: monitorJSON["name"],
                             },
                             {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
+                                name: monitorJSON["type"] === "push" ? "Service Type" : "URL del Servicio",
                                 value: monitorJSON["type"] === "push" ? "Heartbeat" : address,
                             },
                             {
-                                name: `Time (${heartbeatJSON["timezone"]})`,
+                                name: `Fecha (${heartbeatJSON["timezone"]})`,
                                 value: heartbeatJSON["localDateTime"],
                             },
                             {
@@ -85,24 +85,24 @@ class Discord extends NotificationProvider {
                 let discordupdata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "✅ Your service " + monitorJSON["name"] + " is up! ✅",
+                        title: "✅ El servicio " + monitorJSON["name"] + " vuelve a estar abierto! ✅",
                         color: 65280,
                         timestamp: heartbeatJSON["time"],
                         fields: [
                             {
-                                name: "Service Name",
+                                name: "Nombre del Servicio",
                                 value: monitorJSON["name"],
                             },
                             {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
+                                name: monitorJSON["type"] === "push" ? "Service Type" : "URL del Servicio",
                                 value: monitorJSON["type"] === "push" ? "Heartbeat" : address,
                             },
                             {
-                                name: `Time (${heartbeatJSON["timezone"]})`,
+                                name: `Fecha (${heartbeatJSON["timezone"]})`,
                                 value: heartbeatJSON["localDateTime"],
                             },
                             {
-                                name: "Ping",
+                                name: "Ping/Latencia (Del Servicio)",
                                 value: heartbeatJSON["ping"] == null ? "N/A" : heartbeatJSON["ping"] + " ms",
                             },
                         ],
