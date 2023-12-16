@@ -50,7 +50,7 @@ class Discord extends NotificationProvider {
                 let discorddowndata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "❌ El servicio " + monitorJSON["name"] + " se a caido. ❌",
+                        title: "❌ El servicio " + monitorJSON["name"] + " se a caido ❌",
                         color: 16711680,
                         timestamp: heartbeatJSON["time"],
                         fields: [
